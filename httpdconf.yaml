@@ -1,0 +1,10 @@
+- hosts: all
+  become: yes
+  remote_user: ec2-user
+  tasks:    
+        - package:
+                name: "httpd"
+                state: "present"
+        - service:
+                name: "httpd"
+                state: "started"
