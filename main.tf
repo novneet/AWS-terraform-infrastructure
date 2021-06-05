@@ -8,9 +8,6 @@ module "aws_setup_module" {
 	
 }
 
-# output "o1" {
-#   value	=	module.aws_setup_module.instance_public_ip
-# }
 resource "null_resource" "localexec2"{ 
 	provisioner "local-exec"{
 		command	= "ansible-playbook -i ${module.aws_setup_module.instance_public_ip}, --private-key './${var.ec2_private_key}.pem' httpdconf.yaml"
