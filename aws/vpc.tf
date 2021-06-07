@@ -3,9 +3,6 @@ resource "aws_vpc" "vpc1" {
 	tags={
 		"Name"	=	"tf-vpc"
 	}
-	lifecycle {
-	  prevent_destroy=false
-	}
 	enable_dns_hostnames=true
 }
 resource "aws_internet_gateway" "ig1" {
